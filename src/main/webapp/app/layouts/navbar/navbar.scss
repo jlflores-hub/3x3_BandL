@@ -41,6 +41,14 @@ Navbar
   }
 }
 
+.bg-primary {
+  background-image: linear-gradient(#ebc454, #e7ae2f 60%, #e5a71d);
+  background-repeat: no-repeat;
+}
+
+.bg-primary {
+  background-color: #e7ab2f !important;
+}
 /* ==========================================================================
 Logo styles
 ========================================================================== */
@@ -49,6 +57,6 @@ Logo styles
   width: 45px;
   display: inline-block;
   vertical-align: middle;
-  background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
+  background: url('../../../content/images/logo-TresXtres.png') no-repeat center center;
   background-size: contain;
 }

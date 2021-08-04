@@ -45,6 +45,9 @@ public class CacheConfiguration {
             createCache(cm, com.jlfr.tresxtres.domain.User.class.getName());
             createCache(cm, com.jlfr.tresxtres.domain.Authority.class.getName());
             createCache(cm, com.jlfr.tresxtres.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.jlfr.tresxtres.domain.Player.class.getName());
+            createCache(cm, com.jlfr.tresxtres.domain.Team.class.getName());
+            createCache(cm, com.jlfr.tresxtres.domain.Team.class.getName() + ".players");
             // jhipster-needle-ehcache-add-entry
         };
     }
