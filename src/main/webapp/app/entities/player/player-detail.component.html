@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="player">
+            <h2><span jhiTranslate="tresXtresApp.player.detail.title">Player</span> {{ player.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tresXtresApp.player.user">User</span></dt>
+                <dd>
+                    {{ player.user?.login }}
+                </dd>
+                <dt><span jhiTranslate="tresXtresApp.player.team">Team</span></dt>
+                <dd>
+                    <div *ngIf="player.team">
+                        <a [routerLink]="['/team', player.team?.id, 'view']">{{ player.team?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/player', player.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
