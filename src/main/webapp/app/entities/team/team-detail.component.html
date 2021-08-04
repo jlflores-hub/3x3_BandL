@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="team">
+            <h2><span jhiTranslate="tresXtresApp.team.detail.title">Team</span> {{ team.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tresXtresApp.team.name">Name</span></dt>
+                <dd>
+                    <span>{{ team.name }}</span>
+                </dd>
+            </dl>
+
+            <div class="padH-2">
+                <table >
+                    <tr class="row-md">
+                         <td *ngFor="let player of team.players;" class="player"></td>      
+                     </tr>
+                     <tr class="row-md">
+                         <td *ngFor="let player of team.players;" class="text-center">{{ player.user.login }}</td>      
+                     </tr>
+                 </table>
+            </div>
+            
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/team', team.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
